@@ -3,6 +3,7 @@ com\buffalocart\utilities\WaitUtility.class
 com\buffalocart\utilities\TableUtility.class
 com\buffalocart\extentreport\ExtentManager$1.class
 com\buffalocart\utilities\ExcelUtility.class
+com\buffalocart\pages\ResetPage.class
 com\buffalocart\utilities\WaitUtility$LocatorType.class
 com\buffalocart\extentreport\ExtentManager.class
 com\buffalocart\pages\MyAccountPage.class

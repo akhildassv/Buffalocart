@@ -1,36 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="6" total="9" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="31608" started-at="2022-04-25T23:50:27 IST" finished-at="2022-04-25T23:50:59 IST">
+  <suite name="All Test Suite" duration-ms="90397" started-at="2022-04-26T21:01:56 IST" finished-at="2022-04-26T21:03:26 IST">
     <groups>
+      <group name="Regression">
+        <method signature="LogInPageTest.verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="verify_User_Error_Login_With_InValid_User_Credentials1" class="com.buffalocart.test.LogInPageTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test name="Sample" duration-ms="31608" started-at="2022-04-25T23:50:27 IST" finished-at="2022-04-25T23:50:59 IST">
+    <test name="Sample" duration-ms="90397" started-at="2022-04-26T21:01:56 IST" finished-at="2022-04-26T21:03:26 IST">
       <class name="com.buffalocart.test.LogInPageTest">
-        <test-method status="PASS" signature="setExtent(org.testng.ITestContext)[pri:0, instance:com.buffalocart.test.LogInPageTest@57175e74]" name="setExtent" is-config="true" duration-ms="47" started-at="2022-04-25T23:50:27 IST" finished-at="2022-04-25T23:50:27 IST">
+        <test-method status="PASS" signature="setExtent(org.testng.ITestContext)[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="setExtent" is-config="true" duration-ms="78" started-at="2022-04-26T21:01:56 IST" finished-at="2022-04-26T21:01:56 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@64f1fd08]]>
+                <![CDATA[org.testng.TestRunner@1c8f6a90]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.buffalocart.test.LogInPageTest@57175e74]" name="setUp" is-config="true" duration-ms="19057" started-at="2022-04-25T23:50:27 IST" finished-at="2022-04-25T23:50:46 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="setUp" is-config="true" duration-ms="29688" started-at="2022-04-26T21:02:00 IST" finished-at="2022-04-26T21:02:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verify_User_Login_With_Valid_User_Credentials()[pri:2, instance:com.buffalocart.test.LogInPageTest@57175e74]" name="verify_User_Login_With_Valid_User_Credentials" duration-ms="12472" started-at="2022-04-25T23:50:46 IST" description="TC_001_Verify Login Page Title" finished-at="2022-04-25T23:50:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_User_Login_With_Valid_User_Credentials -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.test.LogInPageTest@57175e74]" name="tearDown" is-config="true" duration-ms="1" started-at="2022-04-25T23:50:59 IST" finished-at="2022-04-25T23:50:59 IST">
+        <test-method status="PASS" signature="verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="verify_User_Error_Login_With_InValid_User_Credentials1" duration-ms="8151" started-at="2022-04-26T21:02:30 IST" description="TC_006_Verify the error message displayed for user login with invalid credentials" data-provider="user_credentials" finished-at="2022-04-26T21:02:38 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verify_User_Login_With_Valid_User_Credentials status=SUCCESS method=LogInPageTest.verify_User_Login_With_Valid_User_Credentials()[pri:2, instance:com.buffalocart.test.LogInPageTest@57175e74] output={null}]]]>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[567811]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_User_Error_Login_With_InValid_User_Credentials1 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="tearDown" is-config="true" duration-ms="962" started-at="2022-04-26T21:02:38 IST" finished-at="2022-04-26T21:02:39 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_User_Error_Login_With_InValid_User_Credentials1 status=SUCCESS method=LogInPageTest.verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="setUp" is-config="true" duration-ms="17222" started-at="2022-04-26T21:02:39 IST" finished-at="2022-04-26T21:02:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="verify_User_Error_Login_With_InValid_User_Credentials1" duration-ms="6065" started-at="2022-04-26T21:02:56 IST" description="TC_006_Verify the error message displayed for user login with invalid credentials" data-provider="user_credentials" finished-at="2022-04-26T21:03:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[akhil]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_User_Error_Login_With_InValid_User_Credentials1 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="tearDown" is-config="true" duration-ms="605" started-at="2022-04-26T21:03:02 IST" finished-at="2022-04-26T21:03:03 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_User_Error_Login_With_InValid_User_Credentials1 status=SUCCESS method=LogInPageTest.verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="setUp" is-config="true" duration-ms="15030" started-at="2022-04-26T21:03:03 IST" finished-at="2022-04-26T21:03:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="verify_User_Error_Login_With_InValid_User_Credentials1" duration-ms="7116" started-at="2022-04-26T21:03:18 IST" description="TC_006_Verify the error message displayed for user login with invalid credentials" data-provider="user_credentials" finished-at="2022-04-26T21:03:25 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[akhil]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[563782]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_User_Error_Login_With_InValid_User_Credentials1 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.test.LogInPageTest@77e9807f]" name="tearDown" is-config="true" duration-ms="924" started-at="2022-04-26T21:03:25 IST" finished-at="2022-04-26T21:03:26 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_User_Error_Login_With_InValid_User_Credentials1 status=SUCCESS method=LogInPageTest.verify_User_Error_Login_With_InValid_User_Credentials1(java.lang.String,java.lang.String)[pri:6, instance:com.buffalocart.test.LogInPageTest@77e9807f] output={null}]]]>
               </value>
             </param>
           </params>

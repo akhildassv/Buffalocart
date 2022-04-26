@@ -8,15 +8,16 @@
         <classes>
             <class name="com.buffalocart.test.LogInPageTest">
                 <methods>
-                    <include name="verify_Login_Page_Title"/>
-                    <include name="verify_User_Login_With_Valid_User_Credentials"/>
-                    <include name="verify_User_Error_Login_With_InValid_User_Credentials"/>
-                    <include name="verify_User_RememberMe_Checkbox_clickable"/>
+                    <exclude name="verify_Login_Page_Title"/>
+                    <exclude name="verify_User_Login_With_Valid_User_Credentials"/>
+                    <exclude name="verify_User_Error_Login_With_InValid_User_Credentials"/>
+                    <exclude name="verify_User_RememberMe_Checkbox_clickable"/>
+                    <include name="verify_User_Error_Login_With_InValid_User_Credentials1"/>
                 </methods>
             </class>
             <class name="com.buffalocart.test.ResetPageTest">
                 <methods>
-                    <include name="Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id"/>
+                    <exclude name="Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id"/>
                 </methods>
             </class>
         </classes>
