@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.buffalocart.listeners.TestListener"/>
+    </listeners>
+    <test name="Sample">
+        <classes>
+            <class name="com.buffalocart.test.LogInPageTest">
+                <methods>
+                    <include name="verify_Login_Page_Title"/>
+                    <include name="verify_User_Login_With_Valid_User_Credentials"/>
+                    <include name="verify_User_Error_Login_With_InValid_User_Credentials"/>
+                    <include name="verify_User_RememberMe_Checkbox_clickable"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.test.ResetPageTest">
+                <methods>
+                    <include name="Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

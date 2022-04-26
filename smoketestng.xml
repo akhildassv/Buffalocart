@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.buffalocart.listeners.TestListener"/>
+    </listeners>
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.buffalocart.test.LogInPageTest">
+                <methods>
+                    <include name="verify_User_Login_With_Valid_User_Credentials"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
