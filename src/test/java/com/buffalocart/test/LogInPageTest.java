@@ -12,7 +12,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -45,12 +44,12 @@ public class LogInPageTest extends Base {
         extentTest.get().log(Status.PASS, "User name enetred successfully");
         login.enterPassword(data.get(4));
         extentTest.get().log(Status.PASS, "Password enetred successfully");
-        login.clickOnRememberMe();
+        login.clickOnRememberMeCheckbox();
         extentTest.get().log(Status.PASS, "Clicked Remember_Me Button successfully");
         account=login.clickOnLoginButton();
         extentTest.get().log(Status.PASS, "clicked on login button successfully");
         List<String> accountdata =excel.readDataFromExcel("MyAccountPage");
-        String expectedUserName =accountdata.get(1);
+        String expectedUserName =accountdata.get(2);
         account.clickOnEndTourButton();
         extentTest.get().log(Status.PASS, "clicked on Endtour button successfully");
         String actualUserName =account.getUserAccountName();
@@ -59,21 +58,26 @@ public class LogInPageTest extends Base {
         extentTest.get().log(Status.PASS, "User Logged in successfully");
     }
 
-    @Test(priority = 3,enabled = true,groups = {"Regression"},description = "TC_003_Verify the error message displayed for user login with invalid credentials")
-    public void verify_User_Error_Login_With_InValid_User_Credentials() {
+    @DataProvider(name = "user_credentials")
+    public Object[][] userLoginData()  {
+        Object[][] data = excel.getData("Logindata");
+        return data;
+    }
+
+    @Test(priority = 3,dataProvider = "user_credentials",enabled = true,groups = {"Regression"},description = "TC_003_Verify the error message displayed for user login with invalid credentials")
+    public void verify_User_Error_Login_With_InValid_User_Credentials(String uname, String pword) {
         extentTest.get().assignCategory("Regression");
         login = new LogInPage(driver);
-        List<String> data =excel.readDataFromExcel("LoginPage");
-        login.enterUserName(data.get(6));
+        login.enterUserName(uname);
         extentTest.get().log(Status.PASS, "User name enetred successfully");
-        login.enterPassword(data.get(7));
+        login.enterPassword(pword);
         extentTest.get().log(Status.PASS, "Password enetred successfully");
-        login.clickOnRememberMe();
+        login.clickOnRememberMeCheckbox();
         extentTest.get().log(Status.PASS, "Clicked Remember_Me Button successfully");
         account=login.clickOnLoginButton();
-        String expectedErrorMessage ="These credentials do not match our records.";
-        String actualErrorMessage =login.getErrorMessage();
+        String actualErrorMessage =login.getLoginErrorMessage();
         extentTest.get().log(Status.PASS, "Error Message Recieved");
+        String expectedErrorMessage ="These credentials do not match our records.";
         Assert.assertEquals(actualErrorMessage,expectedErrorMessage,"Logged In-Having Error in Login");
         extentTest.get().log(Status.PASS, "User Logged in Failed and Error Message Displayed");
     }
@@ -82,35 +86,11 @@ public class LogInPageTest extends Base {
     public void verify_User_RememberMe_Checkbox_clickable(){
         extentTest.get().assignCategory("Regression");
         login = new LogInPage(driver);
-        login.clickOnRememberMe();
+        login.clickOnRememberMeCheckbox();
         extentTest.get().log(Status.PASS, "Clicked Remember_Me Button successfully");
-        boolean actualResult=login.getSelectResult();
+        boolean actualResult=login.getSelectCheckboxResult();
         extentTest.get().log(Status.PASS, "Received result of Selection");
         Assert.assertTrue(actualResult,"Cannot able to click on Remember Me Button");
         extentTest.get().log(Status.PASS, "User can able to click on 'Remember me' checkbox");
-    }
-
-    @DataProvider(name = "user_credentials")
-    public Object[][] userLoginData() throws IOException {
-        Object[][] data = excel.getData("Logindata");
-        return data;
-    }
-
-    @Test(priority = 6,dataProvider = "user_credentials",enabled = true,groups = {"Regression"},description = "TC_006_Verify the error message displayed for user login with invalid credentials")
-    public void verify_User_Error_Login_With_InValid_User_Credentials1(String uname, String pword) {
-        extentTest.get().assignCategory("Regression");
-        login = new LogInPage(driver);
-        login.enterUserName(uname);
-        extentTest.get().log(Status.PASS, "User name enetred successfully");
-        login.enterPassword(pword);
-        extentTest.get().log(Status.PASS, "Password enetred successfully");
-        login.clickOnRememberMe();
-        extentTest.get().log(Status.PASS, "Clicked Remember_Me Button successfully");
-        account=login.clickOnLoginButton();
-        String expectedErrorMessage ="These credentials do not match our records.";
-        String actualErrorMessage =login.getErrorMessage();
-        extentTest.get().log(Status.PASS, "Error Message Recieved");
-        Assert.assertEquals(actualErrorMessage,expectedErrorMessage,"Logged In-Having Error in Login");
-        extentTest.get().log(Status.PASS, "User Logged in Failed and Error Message Displayed");
     }
 }

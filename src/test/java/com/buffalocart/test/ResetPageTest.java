@@ -11,7 +11,6 @@ import com.buffalocart.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 public class ResetPageTest extends Base {
@@ -22,7 +21,7 @@ public class ResetPageTest extends Base {
     ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
 
     @Test(priority = 5,enabled = true,groups = {"Regression","Sanity"},description = "TC_005_Verify error meesage displyed on  Reset Password page with invalid email id")
-    public void Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id() throws IOException {
+    public void Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id()  {
         extentTest.get().assignCategory("Regression");
         extentTest.get().assignCategory("Sanity");
         login = new LogInPage(driver);

@@ -12,12 +12,32 @@
                     <exclude name="verify_User_Login_With_Valid_User_Credentials"/>
                     <exclude name="verify_User_Error_Login_With_InValid_User_Credentials"/>
                     <exclude name="verify_User_RememberMe_Checkbox_clickable"/>
-                    <include name="verify_User_Error_Login_With_InValid_User_Credentials1"/>
                 </methods>
             </class>
             <class name="com.buffalocart.test.ResetPageTest">
                 <methods>
                     <exclude name="Verify_error_meesage_displyed_on_Reset_Password_page_with_invalid_email_id"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.test.MyAccountPageTest">
+                <methods>
+                    <exclude name="verify_Home_Page_Title"/>
+                    <include name="Verify_Date_Displeyed_In_Home_Page"/>
+                    <include name="Verify_Whether_Useris_Navigatingto_Login_Pageby_Clickingon_Signout_Button"/>
+                    <include name="Verify_The_Usermangement_Sub_Tabs"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.test.UserPageTest">
+                <methods>
+                    <include name="verify_Users_Page_Title"/>
+                    <exclude name="Verify_User_Search_With_Valid_Data"/>
+                    <include name="Verify_Message_Displayedby_User_Search_With_Invalid_Data"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.test.AddUserPageTest">
+                <methods>
+                    <include name="Verify_the_error_message_displayed_without_filling_mandatory_fields_in_add_user_form"/>
+                    <include name="Verify_Add_Users_page_title"/>
                 </methods>
             </class>
         </classes>

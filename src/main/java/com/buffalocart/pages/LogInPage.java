@@ -51,7 +51,7 @@ public class LogInPage extends ObjectUtility {
         page.enterText(password,pName);
     }
 
-    public void clickOnRememberMe(){
+    public void clickOnRememberMeCheckbox(){
         page.clickOnElement(checkbox);
     }
 
@@ -60,12 +60,12 @@ public class LogInPage extends ObjectUtility {
         return new MyAccountPage(driver);
     }
 
-    public String getErrorMessage(){
+    public String getLoginErrorMessage(){
         String message=page.getElementText(errormessage);
         return message;
     }
 
-    public boolean getSelectResult(){
+    public boolean getSelectCheckboxResult(){
         boolean ans=page.isElementSelected(checkbox);
         return ans;
     }
