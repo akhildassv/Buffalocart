@@ -6,14 +6,38 @@
   </listeners>
   <test thread-count="5" name="Sample(failed)">
     <classes>
-      <class name="com.buffalocart.test.MyAccountPageTest">
+      <class name="com.buffalocart.test.UpdateSalesCommissionAgentsPageTest">
         <methods>
-          <include name="Verify_Date_Displeyed_In_Home_Page"/>
+          <include name="Verify_User_Can_Delete_a_Sales_Commission_Agents"/>
+          <include name="setExtent"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.test.UpdateSalesCommissionAgentsPageTest -->
+      <class name="com.buffalocart.test.AddUserPageTest">
+        <methods>
+          <include name="Verify_user_login_with_Newly_Added_User"/>
           <include name="setUp"/>
           <include name="setExtent"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.buffalocart.test.MyAccountPageTest -->
+      </class> <!-- com.buffalocart.test.AddUserPageTest -->
+      <class name="com.buffalocart.test.AddRolesPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setExtent"/>
+          <include name="Verify_User_can_Add_Roles"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.test.AddRolesPageTest -->
+      <class name="com.buffalocart.test.DeleteRolePageTest">
+        <methods>
+          <include name="Verify_User_Can_Delete_a_role_From_the_List"/>
+          <include name="setUp"/>
+          <include name="setExtent"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.test.DeleteRolePageTest -->
     </classes>
   </test> <!-- Sample(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

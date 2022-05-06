@@ -1,6 +1,7 @@
 package com.buffalocart.pages;
 
 import com.buffalocart.utilities.ObjectUtility;
+import com.buffalocart.utilities.WaitUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,11 +40,14 @@ public class LogInPage extends ObjectUtility {
     /**User Actions Methods**/
 
     public String getLoginPageTitle(){
+        wait.setPageLoadWait(driver);
         String title=page.getPageTitle(driver);
         return title;
     }
 
     public void enterUserName(String uName){
+        wait.setPageLoadWait(driver);
+        wait.waitVisibilityOfElementLocatorBy(driver, WaitUtility.LocatorType.Id,_username);
         page.enterText(username,uName);
     }
 
@@ -56,6 +60,7 @@ public class LogInPage extends ObjectUtility {
     }
 
     public MyAccountPage clickOnLoginButton(){
+        wait.waitVisibilityOfElementLocatorBy(driver, WaitUtility.LocatorType.Xpath,_loginbutton);
         page.clickOnElement(loginbutton);
         return new MyAccountPage(driver);
     }

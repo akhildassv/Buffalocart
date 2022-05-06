@@ -16,8 +16,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserPageTest extends Base {
@@ -103,12 +101,7 @@ public class UserPageTest extends Base {
         extentTest.get().log(Status.PASS, "clicked on UserManagement button successfully");
         users=account.clickOnUsersSubMenuButton();
         extentTest.get().log(Status.PASS, "users page Opened successfully");
-        users.enterTextInSearchBox("Akhildas");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        users.enterTextInSearchBox("Aravindth");
         extentTest.get().log(Status.PASS, "Invalid data entered for search successfully");
         String actualInvalidSearchMessage=users.getNoMatchingMessage();
         extentTest.get().log(Status.PASS, "No Data matching message received successfully");

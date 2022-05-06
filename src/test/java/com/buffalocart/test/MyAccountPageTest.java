@@ -45,7 +45,7 @@ public class MyAccountPageTest extends Base {
         extentTest.get().log(Status.PASS, "Expected title is mached with actual home page title");
     }
 
-    @Test(priority = 7,enabled = true,description = "TC_006_Verify_Date_Displeyed_In_Home_Page",groups = {"Regression"})
+    @Test(priority = 7,enabled = true,description = "TC_007_Verify_Date_Displeyed_In_Home_Page",groups = {"Regression"})
     public void Verify_Date_Displeyed_In_Home_Page ()  {
         extentTest.get().assignCategory("Regression");
         login = new LogInPage(driver);
@@ -65,9 +65,10 @@ public class MyAccountPageTest extends Base {
         extentTest.get().log(Status.PASS, "Expected Date is mached with actual home page Date Displayed");
     }
 
-    @Test(priority = 8,enabled = true,description = "TC_006_Verify_Whether_Useris_Navigatingto_Login_Pageby_Clickingon_Signout_Button",groups = {"Regression"})
+    @Test(priority = 8,enabled = true,description = "TC_008_Verify_Whether_Useris_Navigatingto_Login_Pageby_Clickingon_Signout_Button",groups = {"Regression","Smoke"})
     public void Verify_Whether_Useris_Navigatingto_Login_Pageby_Clickingon_Signout_Button ()  {
         extentTest.get().assignCategory("Regression");
+        extentTest.get().assignCategory("Smoke");
         login = new LogInPage(driver);
         List<String> data =excel.readDataFromExcel("LoginPage");
         login.enterUserName(data.get(3));

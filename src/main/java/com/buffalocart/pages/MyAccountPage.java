@@ -1,6 +1,8 @@
 package com.buffalocart.pages;
 
 import com.buffalocart.utilities.ObjectUtility;
+import com.buffalocart.utilities.WaitUtility;
+import org.apache.xmlbeans.impl.xb.xsdschema.FieldDocument;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,26 +45,26 @@ public class MyAccountPage extends ObjectUtility {
     private final String _userssubmenubutton="//li[2]/ul/li[1]/a/span";
     @FindBy(xpath=_userssubmenubutton) WebElement userssubmenubutton;
 
+    private final String _userssubmenutags="//ul[@class='treeview-menu']//span[@class='title']";
+    @FindBy(xpath=_userssubmenutags) List<WebElement> userssubmenutags;
 
+    private final String _profilebutton="//div/ul/li[2]/ul/li[2]/div[1]/a";
+    @FindBy(xpath=_profilebutton) WebElement profilebutton;
+
+    private final String _rolessubmenubutton="//ul/li[2]/ul/li[2]/a/span";
+    @FindBy(xpath=_rolessubmenubutton) WebElement rolessubmenubutton;
+
+    private final String _salesCommissionSubMenu="//li[2]/ul/li[3]/a/span";
+    @FindBy(xpath=_salesCommissionSubMenu) WebElement salesCommissionSubMenu;
 
     /**User Actions Methods**/
 
     public ArrayList<String> getUserManagementSubMenu() {
-        List<WebElement> options = driver.findElements(By.xpath("//ul[@class='treeview-menu']//span[@class='title']"));
         ArrayList<String> submenu = new ArrayList<String>();
-        for (int i = 0; i < options.size(); i++) {
-            submenu.add(options.get(i).getText());
+        for (int i = 0; i < userssubmenutags.size(); i++) {
+            submenu.add(userssubmenutags.get(i).getText());
         }
         return submenu;
-    }
-
-    public void clickOnUserManagementSubMenu(String menuName) {
-        List<WebElement> options = driver.findElements(By.xpath("//ul[@class='treeview-menu']//span[@class='title']"));
-        for (int i = 0; i < options.size(); i++) {
-            if (options.get(i).getText().equalsIgnoreCase(menuName)) {
-                options.get(i).click();
-            }
-        }
     }
 
     public String getUserAccountName(){
@@ -102,6 +104,29 @@ public class MyAccountPage extends ObjectUtility {
     public UsersPage clickOnUsersSubMenuButton(){
         page.clickOnElement(userssubmenubutton);
         return new UsersPage(driver);
+    }
+
+    public RolesPage clickOnRolesSubMenuButton(){
+        wait.waitVisibilityOfElementLocatorBy(driver, WaitUtility.LocatorType.Xpath,_rolessubmenubutton);
+        page.clickOnElement(rolessubmenubutton);
+        return new RolesPage(driver);
+    }
+
+    public SalesCommissionAgentPage clickOnSalesCommissionSubMenuButton(){
+        wait.waitVisibilityOfElementLocatorBy(driver, WaitUtility.LocatorType.Xpath,_salesCommissionSubMenu);
+        page.clickOnElement(salesCommissionSubMenu);
+        return new SalesCommissionAgentPage(driver);
+    }
+
+    public String getUserName(){
+       String Uname= page.getElementText(accountname);
+        return Uname;
+    }
+
+    public MyProfilePage clickOnProfilebutton(){
+        page.clickOnElement(profilebutton);
+        return new MyProfilePage(driver);
+
     }
 
 }
